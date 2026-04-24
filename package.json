@@ -1,0 +1,15 @@
+{
+  "name": "arkesia-world",
+  "private": true,
+  "packageManager": "pnpm@10.28.2",
+  "author": {
+    "name": "ManuDelAguila"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @arkesia-world/frontend dev",
+    "dev:frontend": "pnpm --filter @arkesia-world/frontend dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "preview:frontend": "pnpm --filter @arkesia-world/frontend preview"
+  }
+}

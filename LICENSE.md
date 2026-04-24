@@ -1,0 +1,24 @@
+© 2026 ManuDelAguila
+
+All rights reserved.
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+
+You are free to:
+
+* Share — copy and redistribute the material in any medium or format
+
+Under the following terms:
+
+* Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+* NonCommercial — You may not use the material for commercial purposes.
+* NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material.
+
+Full license text available at:
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+---
+
+DISCLAIMER:
+
+This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
