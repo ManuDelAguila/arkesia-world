@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react"
 import { Navigate, Outlet, Route, Routes, useLocation, useParams } from "react-router"
 import type { ReactNode } from "react"
 import { Header } from './components/Header'
-import { I18nProvider } from './i18n/I18nProvider'
+import { useI18n, I18nProvider } from './i18n/I18nProvider'
 import { defaultLocale, isLocale } from './i18n/config'
 import {
   getLocalizedPath,
@@ -23,6 +23,12 @@ const localizedPageRoutes = [
   element: ReactNode 
 }>
 
+function LocalizedLoading() {
+  const { t } = useI18n()
+
+  return <div>{t('common.loading')}</div>
+}
+
 function LocaleGate() {
   const { locale } = useParams()
 
@@ -33,7 +39,7 @@ function LocaleGate() {
   return (
     <I18nProvider>
       <Header />
-      <Suspense fallback={<div>Cargando...</div>}>
+      <Suspense fallback={<LocalizedLoading />}>
         <Outlet />
       </Suspense>
     </I18nProvider>
