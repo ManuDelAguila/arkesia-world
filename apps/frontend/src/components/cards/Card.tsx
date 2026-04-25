@@ -1,9 +1,10 @@
 import { CardAwakening } from './CardAwakening';
 import styles from './Card.module.css';
 
-export type CardSize = 'sm' | 'md' | 'lg';
+export type CardSize = 'xs' |'sm' | 'md' | 'lg';
 
 const sizeClassNames: Record<CardSize, string> = {
+    xs: styles.cardXs,
     sm: styles.cardSm,
     md: styles.cardMd,
     lg: styles.cardLg,

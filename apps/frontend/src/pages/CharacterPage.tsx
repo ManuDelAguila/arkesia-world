@@ -18,6 +18,7 @@ export default function CharacterPage() {
             <CardSet cards={cards} size='lg'/>
             <CardSet cards={cards} size='md'/>
             <CardSet cards={cards} size='sm'/>
+            <CardSet cards={cards} size='xs'/>
             
         </>
     )

@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  flex: 0 0 auto;
   --card-scale: 1;
   --card-width-base: 262px;
   --card-height-base: 392px;
@@ -9,6 +10,10 @@
   --gem-width-base: 40px;
   width: calc(var(--card-width-base) * var(--card-scale));
   height: calc(var(--card-height-base) * var(--card-scale));
+}
+
+.cardXs {
+  --card-scale: 0.25;
 }
 
 .cardSm {
@@ -22,6 +27,7 @@
 .cardLg {
   --card-scale: 1;
 }
+
 
 .cardInner {
   position: absolute;
