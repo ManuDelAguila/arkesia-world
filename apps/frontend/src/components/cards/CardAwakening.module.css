@@ -1,0 +1,21 @@
+.awakening {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 0.08rem;
+  width: fit-content;
+}
+
+.gem {
+  width: 40px;
+  height: auto;
+  display: block;
+  flex: 0 0 auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
