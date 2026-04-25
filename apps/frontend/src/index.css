@@ -7,16 +7,14 @@
 :root {
 
     --background: rgb(14 14 14);
-    ;
     --text-primary: rgb(229 226 226);
-    --background-top: rgb(2 6 23 / 0.8);
-
-
-    /* --background: #130D07; */
-    /* --background-top: #0B0E12; */
+    --background-top: rgb(2 6 23 / 0.8);  
 
     --text-secondary: #D4AF37;
     --text-neutral: #787777;
+
+    --background-tooltip: #333;
+    --text-tooltip: var(--text-secondary);
 }
 
 @font-face {

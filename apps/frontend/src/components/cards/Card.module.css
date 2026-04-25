@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.card img {
+  grid-area: 1 / 1;
+  display: block;
+}
+
+.card::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--background-tooltip);
+  color: var(--text-tooltip);
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.card:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
