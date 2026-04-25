@@ -9,12 +9,15 @@
     --background: rgb(14 14 14);
     --text-primary: rgb(229 226 226);
     --background-top: rgb(2 6 23 / 0.8);  
+    --background-pannel: rgba(11, 14, 18, 0.6);
 
     --text-secondary: #D4AF37;
     --text-neutral: #787777;
 
     --background-tooltip: #333;
     --text-tooltip: var(--text-secondary);
+
+    --border-color: rgba(175, 141, 17, 0.3);
 }
 
 @font-face {
@@ -26,8 +29,17 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+    font-family: 'Newsreader Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 200 800;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/newsreader:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 body {
-    font-family: system-ui;
+    font-family: "Inter Variable", sans-serif;
     background-color: var(--background);
     color: var(--text-primary);
     min-height: 100vh;
@@ -40,7 +52,7 @@ header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: flex-end;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-color);
     background-color: var(--background-top);
     padding: 1.5rem 1rem;
     justify-content: space-between;
@@ -73,4 +85,27 @@ nav {
     a.nav-link-active {
         color: var(--text-secondary);
     }
+}
+
+section.panel {
+    background-color: var(--background-pannel);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+
+    h2 {
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-secondary)
+    }
+}
+
+.text-title {
+    font-family: "Newsreader Variable", serif;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
 }

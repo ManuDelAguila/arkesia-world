@@ -16,10 +16,13 @@ type CardSetProps = {
 
 export function CardSet({ cards, size = 'lg' }: CardSetProps) {
     return (
-        <div className={styles.cardset}>
-            {cards.map((card, index) => (
-                <Card key={index} {...card} size={size} />
-            ))}
-        </div>
+        <section className="panel">
+            <h2 className="text-title">Cartas</h2>
+            <div className={styles.cardset}>
+                {cards.map((card, index) => (
+                    <Card key={index} {...card} size={size} />
+                ))}
+            </div>
+        </section>
     );
 }
