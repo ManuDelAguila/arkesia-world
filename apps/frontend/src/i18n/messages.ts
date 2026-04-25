@@ -1,4 +1,4 @@
-import type { Locale } from './config';
+import type { Locale } from './config'
 
 export const messages = {
     es: {
@@ -19,6 +19,9 @@ export const messages = {
         character: {
             title: 'Página de personaje',
         },
+        cards: {
+            title: 'Cartas',
+        },
     },
     en: {
         header: {
@@ -38,8 +41,11 @@ export const messages = {
         character: {
             title: 'Character page',
         },
+        cards: {
+            title: 'Cards',
+        },
     },
-} as const satisfies Record<Locale, Record<string, unknown>>;
+} as const satisfies Record<Locale, Record<string, unknown>>
 
 export type MessageKey =
     | 'header.siteTitle'
@@ -50,4 +56,5 @@ export type MessageKey =
     | 'header.english'
     | 'common.loading'
     | 'home.title'
-    | 'character.title';
+    | 'character.title'
+    | 'cards.title'

@@ -1,19 +1,19 @@
-import type { Locale } from './config';
+import type { Locale } from './config'
 
-export type RouteKey = 'home' | 'character';
+export type RouteKey = 'home' | 'character'
 
 type RouteParamsMap = {
-    home: Record<string, never>;
+    home: Record<string, never>
     character: {
-        characterName: string;
-    };
-};
+        characterName: string
+    }
+}
 
 type LocalizedRouteDefinition<K extends RouteKey = RouteKey> = {
-    key: K;
-    segments: Record<Locale, string>;
-    paramNames: Array<keyof RouteParamsMap[K]>;
-};
+    key: K
+    segments: Record<Locale, string>
+    paramNames: Array<keyof RouteParamsMap[K]>
+}
 
 const localizedRouteDefinitions = {
     home: {
@@ -32,30 +32,30 @@ const localizedRouteDefinitions = {
         },
         paramNames: ['characterName'],
     },
-} as const satisfies { [K in RouteKey]: LocalizedRouteDefinition<K> };
+} as const satisfies { [K in RouteKey]: LocalizedRouteDefinition<K> }
 
-export type RouteParams<K extends RouteKey> = RouteParamsMap[K];
+export type RouteParams<K extends RouteKey> = RouteParamsMap[K]
 
 export function getLocalizedSegment(locale: Locale, route: RouteKey) {
-    return localizedRouteDefinitions[route].segments[locale];
+    return localizedRouteDefinitions[route].segments[locale]
 }
 
 export function resolveRouteKeyFromSegment(segment: string | undefined): RouteKey | null {
     if (!segment) {
-        return 'home';
+        return 'home'
     }
 
     const routeEntries = Object.entries(localizedRouteDefinitions) as Array<
         [RouteKey, LocalizedRouteDefinition]
-    >;
+    >
 
     for (const [routeKey, routeDefinition] of routeEntries) {
         if (Object.values(routeDefinition.segments).includes(segment)) {
-            return routeKey;
+            return routeKey
         }
     }
 
-    return null;
+    return null
 }
 
 export function getLocalizedPath<K extends RouteKey>(
@@ -64,34 +64,34 @@ export function getLocalizedPath<K extends RouteKey>(
     params?: RouteParams<K>,
 ) {
     if (route === 'home') {
-        return `/${locale}`;
+        return `/${locale}`
     }
 
-    const routeDefinition = localizedRouteDefinitions[route];
-    const localizedSegment = routeDefinition.segments[locale];
-    const pathSegments: string[] = [locale, localizedSegment];
+    const routeDefinition = localizedRouteDefinitions[route]
+    const localizedSegment = routeDefinition.segments[locale]
+    const pathSegments: string[] = [locale, localizedSegment]
 
     for (const paramName of routeDefinition.paramNames) {
-        const paramValue = params?.[paramName];
-        pathSegments.push(paramValue ?? '');
+        const paramValue = params?.[paramName]
+        pathSegments.push(paramValue ?? '')
     }
 
-    return `/${pathSegments.join('/')}`;
+    return `/${pathSegments.join('/')}`
 }
 
 export function getRouteAliases(route: RouteKey) {
-    const routeDefinition = localizedRouteDefinitions[route];
-    const localizedSegments = Object.values(routeDefinition.segments).filter(Boolean);
+    const routeDefinition = localizedRouteDefinitions[route]
+    const localizedSegments = Object.values(routeDefinition.segments).filter(Boolean)
 
     return localizedSegments.map((segment) => {
         const paramSuffix = routeDefinition.paramNames
             .map((paramName) => `/:${String(paramName)}`)
-            .join('');
+            .join('')
 
-        return `${segment}${paramSuffix}`;
-    });
+        return `${segment}${paramSuffix}`
+    })
 }
 
 export function getRouteParamNames<K extends RouteKey>(route: K) {
-    return localizedRouteDefinitions[route].paramNames;
+    return localizedRouteDefinitions[route].paramNames
 }

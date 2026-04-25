@@ -1,23 +1,23 @@
-import { CardAwakening } from './CardAwakening';
-import styles from './Card.module.css';
+import { CardAwakening } from './CardAwakening'
+import styles from './Card.module.css'
 
-export type CardSize = 'xs' |'sm' | 'md' | 'lg';
+export type CardSize = 'xs' |'sm' | 'md' | 'lg'
 
 const sizeClassNames: Record<CardSize, string> = {
     xs: styles.cardXs,
     sm: styles.cardSm,
     md: styles.cardMd,
     lg: styles.cardLg,
-};
+}
 
 type CardProps = {
-    nombre: string;
-    imagen: string;
-    rareza: string;
-    awakeningCount: number;
-    awakeningTotal: number;
-    size?: CardSize;
-};
+    nombre: string
+    imagen: string
+    rareza: string
+    awakeningCount: number
+    awakeningTotal: number
+    size?: CardSize
+}
 
 export function Card({
     nombre,
@@ -35,5 +35,5 @@ export function Card({
                 <CardAwakening current={awakeningCount} max={awakeningTotal} />
             </div>
         </div>
-    );
+    )
 }

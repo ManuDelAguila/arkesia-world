@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router"
-import { useI18n } from "../i18n/I18nProvider";
+import { useI18n } from "../i18n/I18nProvider"
 
 export function Header() {
-    const { locale, t, getPath, switchLocalePath } = useI18n();
+    const { locale, t, getPath, switchLocalePath } = useI18n()
 
     return (
         <header>

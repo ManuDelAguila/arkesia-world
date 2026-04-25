@@ -18,7 +18,10 @@ const Character = lazy(() => import('./pages/CharacterPage.tsx'))
 
 const localizedPageRoutes = [
   { route: 'character', element: <Character /> },
-] as const satisfies ReadonlyArray<{ route: Exclude<RouteKey, 'home'>; element: ReactNode }>
+] as const satisfies ReadonlyArray<{ 
+  route: Exclude<RouteKey, 'home'>
+  element: ReactNode 
+}>
 
 function LocaleGate() {
   const { locale } = useParams()
