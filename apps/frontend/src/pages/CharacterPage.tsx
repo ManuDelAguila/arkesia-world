@@ -15,7 +15,9 @@ export default function CharacterPage() {
             <div>
                 <h1>Character Page</h1>
             </div>
-            <CardSet cards={cards} />
+            <CardSet cards={cards} size='lg'/>
+            <CardSet cards={cards} size='md'/>
+            <CardSet cards={cards} size='sm'/>
             
         </>
     )

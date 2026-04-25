@@ -1,7 +1,35 @@
 .card {
   position: relative;
+  --card-scale: 1;
+  --card-width-base: 262px;
+  --card-height-base: 392px;
+  --card-image-inset-base: 14px;
+  --awakening-bottom-base: 25px;
+  --awakening-gap-base: 0.08rem;
+  --gem-width-base: 40px;
+  width: calc(var(--card-width-base) * var(--card-scale));
+  height: calc(var(--card-height-base) * var(--card-scale));
+}
+
+.cardSm {
+  --card-scale: 0.5;
+}
+
+.cardMd {
+  --card-scale: 0.7;
+}
+
+.cardLg {
+  --card-scale: 1;
+}
+
+.cardInner {
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .cardImage,
@@ -11,17 +39,22 @@
 }
 
 .cardImage {
+  width: calc(100% - (var(--card-image-inset-base) * var(--card-scale)));
+  height: calc(100% - (var(--card-image-inset-base) * var(--card-scale)));
+  object-fit: cover;
   z-index: 1;
 }
 
 .overlayImage {
+  width: 100%;
+  height: auto;
   z-index: 2;
 }
 
 .card::after {
   content: attr(aria-label);
   position: absolute;
-  bottom: 20%;
+  bottom: 25%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   background: var(--background-tooltip);

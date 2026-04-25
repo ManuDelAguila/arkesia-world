@@ -1,12 +1,25 @@
-import { Card } from './Card'
+import { Card, type CardSize } from './Card'
 import styles from './CardSet.module.css';
 
-export function CardSet({cards}: {cards: any[]}) {
+type CardItem = {
+    nombre: string;
+    imagen: string;
+    rareza: string;
+    awakeningCount: number;
+    awakeningTotal: number;
+};
+
+type CardSetProps = {
+    cards: CardItem[];
+    size?: CardSize;
+};
+
+export function CardSet({ cards, size = 'lg' }: CardSetProps) {
     return (
         <div className={styles.cardset}>
             {cards.map((card, index) => (
-                <Card key={index} {...card} />
+                <Card key={index} {...card} size={size} />
             ))}
         </div>
-    )
+    );
 }
