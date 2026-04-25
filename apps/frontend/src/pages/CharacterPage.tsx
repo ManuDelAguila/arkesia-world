@@ -1,6 +1,8 @@
 import { CardSet } from '../components/cards/CardSet'
+import { useI18n } from '../i18n/I18nProvider';
 
 export default function CharacterPage() {
+    const { t } = useI18n();
     const cards = [
         {nombre: "샨디", imagen: "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_00_4.png", rareza: "4", awakeningCount: 2, awakeningTotal: 5},
         {nombre: "아제나&이난나", imagen: "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_02_0.png", rareza: "4", awakeningCount: 3, awakeningTotal: 5},
@@ -13,12 +15,11 @@ export default function CharacterPage() {
     return (
         <>
             <div>
-                <h1>Character Page</h1>
+                <h1>{t('character.title')}</h1>
             </div>
             <CardSet cards={cards} size='lg'/>
             <CardSet cards={cards} size='md'/>
             <CardSet cards={cards} size='sm'/>
-            <CardSet cards={cards} size='xs'/>
             
         </>
     )

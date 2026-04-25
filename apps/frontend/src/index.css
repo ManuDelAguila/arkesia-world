@@ -87,6 +87,22 @@ nav {
     }
 }
 
+.language-switcher {
+    grid-column: 3;
+    justify-self: end;
+    display: flex;
+    gap: 0.75rem;
+
+    a {
+        text-decoration: none;
+        color: var(--text-neutral);
+    }
+
+    a.nav-link-active {
+        color: var(--text-secondary);
+    }
+}
+
 section.panel {
     background-color: var(--background-pannel);
     backdrop-filter: blur(12px);
