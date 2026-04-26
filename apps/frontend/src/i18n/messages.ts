@@ -21,6 +21,7 @@ export const messages = {
         },
         cards: {
             title: 'Cartas',
+            effect: 'Efectos',
         },
     },
     en: {
@@ -43,6 +44,7 @@ export const messages = {
         },
         cards: {
             title: 'Cards',
+            effect: 'Effects',
         },
     },
 } as const satisfies Record<Locale, Record<string, unknown>>
@@ -58,3 +60,4 @@ export type MessageKey =
     | 'home.title'
     | 'character.title'
     | 'cards.title'
+    | 'cards.effect'

@@ -4,3 +4,57 @@
     align-items: flex-start;
     gap: 0.75rem;
 }
+
+.effectTooltip {
+    position: relative;
+}
+
+.effectTrigger {
+    color: var(--text-secondary);
+    cursor: help;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.effectContent {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 280px;
+    max-width: 360px;
+    display: grid;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: rgb(15 18 24 / 0.96);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 20;
+}
+
+.effectTooltip:hover .effectContent,
+.effectTooltip:focus-within .effectContent {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.effectItem {
+    display: grid;
+    gap: 0.15rem;
+}
+
+.effectItem strong {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.effectItem span {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
