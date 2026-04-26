@@ -31,7 +31,7 @@ export function Card({
         <div className={`${styles.card} ${sizeClassNames[size]}`} aria-label={nombre}>
             <div className={styles.cardInner}>
                 <img className={styles.cardImage} src={imagen} alt={nombre} />
-                <img className={styles.overlayImage} src={`/cartas/marco_carta_${rareza}.png`} alt={rareza} />
+                <img className={styles.overlayImage} src={`/cartas/marco_carta_${rareza}.webp`} alt={rareza} />
                 <CardAwakening current={awakeningCount} max={awakeningTotal} />
             </div>
         </div>

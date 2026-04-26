@@ -5,8 +5,8 @@ type CardAwakeningProps = {
     max: number
 }
 
-const ACTIVE_GEM_SRC = '/cartas/gem-on.png'
-const INACTIVE_GEM_SRC = '/cartas/gem-off.png'
+const ACTIVE_GEM_SRC = '/cartas/gem-on.webp'
+const INACTIVE_GEM_SRC = '/cartas/gem-off.webp'
 
 export function CardAwakening({ current, max }: CardAwakeningProps) {
     const safeMax = Math.max(0, max)
